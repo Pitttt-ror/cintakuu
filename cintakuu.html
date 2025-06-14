@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>For Cantiikuu</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #ffdde1, #ee9ca7);
+      overflow: hidden;
+    }
+    .slider {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      z-index: 2;
+    }
+    .slide {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      color: white;
+      padding: 20px;
+    }
+    .slide.active {
+      opacity: 1;
+      z-index: 3;
+    }
+    .slide img {
+      width: 300px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(255,255,255,0.7);
+      margin-bottom: 20px;
+      animation: fadeIn 2s ease-in-out;
+    }
+    .slide h2 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 40px;
+      animation: fadeInUp 2s ease-in-out;
+    }
+    .slide p {
+      font-size: 20px;
+      max-width: 600px;
+      animation: fadeInUp 2.5s ease-in-out;
+    }
+    .controls {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      z-index: 4;
+    }
+    .btn {
+      background-color: rgba(255, 255, 255, 0.5);
+      border: none;
+      padding: 10px 20px;
+      font-size: 30px;
+      cursor: pointer;
+      color: #ff4081;
+      border-radius: 50%;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background-color: rgba(255, 255, 255, 0.9);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95);}
+      to { opacity: 1; transform: scale(1);}
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+
+    audio {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      z-index: 5;
+    }
+
+    /* Efek Hati Jatuh */
+    #love-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+    .love {
+      position: absolute;
+      color: #ff5ca8;
+      font-size: 20px;
+      animation: fall linear infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(-10%); opacity: 1; }
+      100% { transform: translateY(110vh); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="slider">
+  <!-- Slide 1 -->
+  <div class="slide active">
+    <h2>Cinta Tak Pernah Salah</h2>
+    <p>Aku mencintaimu bukan karena siapa kamu, tapi karena siapa aku ketika bersamamu.</p>
+  </div>
+  <!-- Slide 2 -->
+  <div class="slide">
+    <h2>Kamu Segalanya Warida Evana Salsabilla Ku</h2>
+    <p>Ketika aku bersamamu, dunia seakan berhenti dan hanya menyisakan kita berdua.</p>
+  </div>
+  <!-- Slide 3 -->
+  <div class="slide">
+    <h2>Selamanya Kamu</h2>
+    <p>Jika aku punya satu doa yang dikabulkan, aku ingin mencintaimu... selamanya.</p>
+  </div>
+  <!-- Slide 4 -->
+  <div class="slide">
+    <h2>Hadirmu Obatku</h2>
+    <p>Hadirmu adalah harapan yang mampu menerangi hari-hariku yang kelabu, jadi jika ingin ninggalin aku bilang dulu ya
+    biar ga peteng</p>
+  </div>
+  <!-- Slide 5 -->
+  <div class="slide">
+    <h2>Satu Dalam Rindu</h2>
+    <p>Rinduku tak pernah padam, bahkan ketika jarak memisahkan kita sejauh bintang, jangan rindu, rindu
+    itu berat biar aku saja, hehe</p>
+  </div>
+  <!-- Slide 6 -->
+  <div class="slide">
+    <h2>Hanya Untukmu</h2>
+    <p>Cinta ini kubangun hanya untuk satu hati, maka jagalah selalu ya takut roboh, hehe</p>
+  </div>
+  <!-- Slide 7: Galeri Foto -->
+  <div class="slide">
+    <h2><br>Jika Kamu Menemukan Seseorang Ynag lebih Dariku,
+    Aku Hanya Bisa Memberi Beberapa Potongan Kenangan Kita</br></h2>
+    <p>Setiap momen bersamamu adalah lukisan cinta yang takkan pernah pudar.</p>
+    <div style="display: flex; gap: 15px; flex-wrap: wrap; justify-content: center;">
+      <img src="1.jpg" style="width: 200px; border-radius: 15px; box-shadow: 0 0 10px rgba(255,255,255,0.5);">
+      <img src="2.jpg" style="width: 200px; border-radius: 15px; box-shadow: 0 0 10px rgba(255,255,255,0.5);">
+      <img src="3.jpg" style="width: 200px; border-radius: 15px; box-shadow: 0 0 10px rgba(255,255,255,0.5);">
+      <img src="4.jpg" style="width: 200px; border-radius: 15px; box-shadow: 0 0 10px rgba(255,255,255,0.5);">
+    </div>
+  </div>
+
+  <!-- Navigasi -->
+  <div class="controls">
+    <button class="btn" onclick="prevSlide()">&#10094;</button>
+    <button class="btn" onclick="nextSlide()">&#10095;</button>
+  </div>
+
+  <!-- Musik -->
+  <audio autoplay loop controls>
+    <source src="5.mp3" type="audio/mpeg">
+    Lagu tidak didukung browser Anda.
+  </audio>
+</div>
+
+<!-- Efek Love -->
+<div id="love-container"></div>
+
+<script>
+  let current = 0;
+  const slides = document.querySelectorAll(".slide");
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.remove("active");
+      if (i === index) slide.classList.add("active");
+    });
+  }
+
+  function nextSlide() {
+    current = (current + 1) % slides.length;
+    showSlide(current);
+  }
+
+  function prevSlide() {
+    current = (current - 1 + slides.length) % slides.length;
+    showSlide(current);
+  }
+
+  setInterval(nextSlide, 10000); // otomatis pindah slide tiap 10 detik
+
+  // Efek love jatuh
+  const loveContainer = document.getElementById('love-container');
+  function createLove() {
+    const love = document.createElement('div');
+    love.classList.add('love');
+    love.innerHTML = '❤';
+    love.style.left = Math.random() * 100 + 'vw';
+    love.style.fontSize = (Math.random() * 20 + 10) + 'px';
+    love.style.animationDuration = (Math.random() * 3 + 2) + 's';
+    loveContainer.appendChild(love);
+    setTimeout(() => love.remove(), 5000);
+  }
+  setInterval(createLove, 300);
+</script>
+
+</body>
+</html>
